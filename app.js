@@ -34,8 +34,8 @@ const app = Vue.createApp({
       this.attackPlayer();
     },
     healPlayer() {
+      this.round++;
       const healValue = getRandomValue(8, 20);
-
       (this.playerHealth += healValue) > 100
         ? (this.playerHealth = 100)
         : (this.playerHealth += healValue);
@@ -48,8 +48,11 @@ const app = Vue.createApp({
     playerBar() {
       return { width: this.playerHealth + "%" };
     },
-    disableButtonRound() {
+    mayUseSpecialAttack() {
       return this.round % 3 !== 0;
+    },
+    mayUseHeal() {
+      return this.round % 4 !== 0;
     },
   },
 });
