@@ -48,6 +48,9 @@ const app = Vue.createApp({
       this.monsterHealth = 100;
       this.winner = null;
     },
+    surrenderButton() {
+      this.winner = "surrender";
+    },
   },
   computed: {
     monsterBar() {
