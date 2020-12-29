@@ -55,6 +55,8 @@ const app = Vue.createApp({
     mayUseHeal() {
       return this.round % 4 !== 0;
     },
+  },
+  watch: {
     checkGameOver() {
       if (this.playerHealth <= 0 && this.monsterHealth <= 0) {
         alert("Draw!");
