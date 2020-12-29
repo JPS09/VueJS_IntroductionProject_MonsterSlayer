@@ -23,6 +23,13 @@ const app = Vue.createApp({
         ? (this.playerHealth = 0)
         : (this.playerHealth -= attackValue);
     },
+    specialAttackMonster() {
+      const attackValue = getRandomValue(10, 25);
+      (this.monsterHealth -= attackValue) < 0
+        ? (this.monsterHealth = 0)
+        : (this.monsterHealth -= attackValue);
+      this.attackPlayer();
+    },
   },
   computed: {
     monsterBar() {
