@@ -34,7 +34,7 @@ const app = Vue.createApp({
       this.attackPlayer();
     },
     healPlayer(){
-      const healValue = getRandomValue(10,20);
+      const healValue = getRandomValue(8,20);
       this.playerHealth += healValue;
     }
   },
