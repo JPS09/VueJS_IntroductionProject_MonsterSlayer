@@ -53,7 +53,8 @@
             <span v-if="log.whatAction === 'heal'">
               heals himself <span class="log--heal">{{log.dataNumber}} points</span>
             </span>
-            <span v-else-if="log.whatAction === 'attack' || 'special attacked'"> deals <span class ='log--damage'>{{log.dataNumber}} damage</span></span>
+            <span v-else-if="log.whatAction === 'attack'"> deals <span class ='log--damage'>{{log.dataNumber}} damage</span></span>
+            <span v-else-if="log.whatAction === 'Special attacked'"> uses a special attack and deals <span class ='log--damage'>{{log.dataNumber}} damage</span></span>
           </li>
         </ul>
       </section>
