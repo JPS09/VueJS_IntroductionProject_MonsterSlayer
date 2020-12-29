@@ -39,7 +39,7 @@ const app = Vue.createApp({
       (this.playerHealth += healValue) > 100
         ? (this.playerHealth = 100)
         : (this.playerHealth += healValue);
-        this.attackPlayer();
+      this.attackPlayer();
     },
   },
   computed: {
@@ -54,6 +54,17 @@ const app = Vue.createApp({
     },
     mayUseHeal() {
       return this.round % 4 !== 0;
+    },
+    checkGameOver() {
+      if (this.playerHealth <= 0 && this.monsterHealth <= 0) {
+        alert("Draw!");
+      } else if (this.playerHealth <= 0 || this.monsterHealth <= 0) {
+        if (this.playerHealth <= 0) {
+          alert("You lost!");
+        } else {
+          alert("You Win!");
+        }
+      }
     },
   },
 });
