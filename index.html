@@ -48,7 +48,13 @@
       <section id="log" class="container">
         <h2>Battle Log</h2>
         <ul v-if="logs.length > 0">
-          <li v-for="(log,index) in logs" :key ='index'><span>{{log.actionBy}}</span> <span>{{log.whatAction}}</span> <span>{{log.dataNumber}}</span></li>
+          <li v-for="(log,index) in logs" :key="index">
+            <span>{{log.actionBy}} </span>
+            <span v-if="log.whatAction === 'heal'">
+              heals himself <span class="log--heal">{{log.dataNumber}} points</span>
+            </span>
+            <span v-else-if="log.whatAction === 'attack' || 'special attacked'"> deals <span class ='log--damage'>{{log.dataNumber}} damage</span></span>
+          </li>
         </ul>
       </section>
     </div>

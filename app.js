@@ -44,7 +44,7 @@ const app = Vue.createApp({
       (this.playerHealth += healValue) > 100
         ? (this.playerHealth = 100)
         : (this.playerHealth += healValue);
-      this.battleLog("Player", "healed", healValue);
+      this.battleLog("Player", "heal", healValue);
       this.attackPlayer();
     },
     resetGame() {
