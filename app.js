@@ -33,7 +33,11 @@ const app = Vue.createApp({
         : (this.monsterHealth -= attackValue);
       this.attackPlayer();
     },
-   },
+    healPlayer(){
+      const healValue = getRandomValue(10,20);
+      this.playerHealth += healValue;
+    }
+  },
   computed: {
     monsterBar() {
       return { width: this.monsterHealth + "%" };
