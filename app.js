@@ -12,12 +12,21 @@ const app = Vue.createApp({
   methods: {
     attackMonster() {
       const attackValue = getRandomValue(5, 12);
-      this.monsterHealth -= attackValue;
+      if ((this.monsterHealth -= attackValue) < 0) {
+        this.monsterHealth = 0;
+      } else {
+        this.monsterHealth -= attackValue;
+      }
       this.attackPlayer();
     },
     attackPlayer() {
       const attackValue = getRandomValue(8, 15);
-      this.playerHealth -= attackValue;
+      if ((this.playerHealth -= attackValue) < 0) {
+        this.playerHealth = 0;
+      } else {
+        this.playerHealth -= attackValue;
+      }
+      console.log(this.playerHealth);
     },
   },
   computed: {
