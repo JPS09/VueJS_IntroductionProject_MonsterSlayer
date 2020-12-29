@@ -57,15 +57,18 @@ const app = Vue.createApp({
     },
   },
   watch: {
-    checkGameOver() {
-      if (this.playerHealth <= 0 && this.monsterHealth <= 0) {
+    playerHealth(value) {
+      if (value <= 0 && this.monsterHealth <= 0) {
         alert("Draw!");
-      } else if (this.playerHealth <= 0 || this.monsterHealth <= 0) {
-        if (this.playerHealth <= 0) {
-          alert("You lost!");
-        } else {
-          alert("You Win!");
-        }
+      } else if (value <= 0) {
+        alert("You lost!");
+      }
+    },
+    monsterHealth(value) {
+      if (value <= 0 && this.playerHealth <= 0) {
+        alert("Draw!");
+      } else if (value <= 0) {
+        alert("You win!");
       }
     },
   },
