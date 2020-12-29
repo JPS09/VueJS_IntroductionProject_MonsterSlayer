@@ -51,9 +51,15 @@ const app = Vue.createApp({
   },
   computed: {
     monsterBar() {
+      if (this.monsterHealth <= 0) {
+        return { width: "0%" };
+      }
       return { width: this.monsterHealth + "%" };
     },
     playerBar() {
+      if (this.playerHealth <= 0) {
+        return { width: "0%" };
+      }
       return { width: this.playerHealth + "%" };
     },
     mayUseSpecialAttack() {
