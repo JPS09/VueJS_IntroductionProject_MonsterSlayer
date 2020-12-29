@@ -33,10 +33,13 @@ const app = Vue.createApp({
         : (this.monsterHealth -= attackValue);
       this.attackPlayer();
     },
-    healPlayer(){
-      const healValue = getRandomValue(8,20);
-      this.playerHealth += healValue;
-    }
+    healPlayer() {
+      const healValue = getRandomValue(8, 20);
+
+      (this.playerHealth += healValue) > 100
+        ? (this.playerHealth = 100)
+        : (this.playerHealth += healValue);
+    },
   },
   computed: {
     monsterBar() {
@@ -45,9 +48,9 @@ const app = Vue.createApp({
     playerBar() {
       return { width: this.playerHealth + "%" };
     },
-    disableButtonRound(){
-      return this.round % 3 !== 0
-    }
+    disableButtonRound() {
+      return this.round % 3 !== 0;
+    },
   },
 });
 
