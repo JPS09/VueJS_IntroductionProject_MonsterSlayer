@@ -41,6 +41,11 @@ const app = Vue.createApp({
         : (this.playerHealth += healValue);
       this.attackPlayer();
     },
+    resetGame(){
+      this.playerHealth = 100;
+      this.monsterHealth = 100 ;
+      this.round = 0;
+    }
   },
   computed: {
     monsterBar() {
@@ -55,6 +60,9 @@ const app = Vue.createApp({
     mayUseHeal() {
       return this.round % 4 !== 0;
     },
+    checkGameOver(){
+
+    }
   },
 });
 
