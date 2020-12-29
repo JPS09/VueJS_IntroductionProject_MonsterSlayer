@@ -43,11 +43,13 @@
           SPECIAL ATTACK
         </button>
         <button :disabled="mayUseHeal" @click="healPlayer">HEAL</button>
-        <button @click='surrenderButton'>SURRENDER</button>
+        <button @click="surrenderButton">SURRENDER</button>
       </section>
       <section id="log" class="container">
         <h2>Battle Log</h2>
-        <ul></ul>
+        <ul v-if="logs.length > 0">
+          <li v-for="log in logs">{{log}}</li>
+        </ul>
       </section>
     </div>
   </body>
