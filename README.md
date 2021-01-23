@@ -9,4 +9,4 @@ This **introduction project** was made in Vue.js while following ***[a course](h
 - **Using Data** to *influence CSS classes*
 - Using **events listener** to *execute methods*
 
-You can see the result here : **[Monster Slayer](https://jps09.github.io/VueJS_prj-monster-01/)**
+You can see the result here : **[Monster Slayer](https://jps09.github.io/VueJS_IntroductionProject_MonsterSlayer)**
